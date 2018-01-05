@@ -2,7 +2,7 @@
 class App {
   static init() {
 
-    const hosturl = 'http://192.168.2.84:3000/'
+    const hosturl = 'http://25.66.28.15:3000/'
 
     // grabbing elements already on page
 
@@ -19,14 +19,8 @@ class App {
         let name = event.target.querySelector('[name=first_name]').value
         let email = event.target.querySelector('[name=email]').value
         Adapter.findUser(name, email, hosturl).then(function(userData) {
-          document.getElementById('main').innerHTML = ''
+          document.getElementById('test1').innerHTML = ''
           User.renderProfile(userData)
-          document.getElementById('main').innerHTML += `
-            <div id="test1">
-              <h1>TEST1</h1>
-            </div>
-          `
-          //console.log(userData)
         })
     } else if (event.target.className === ''){
 
